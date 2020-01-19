@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { fetchUtils, Admin, Resource } from 'react-admin';
+import { LinkList, LinkCreate } from './links/links';
+import jsonServerProvider from 'ra-data-json-server';
+import authProvider from './auth/authProvider';
+import MyLoginPage from './home/myLoginPage';
 
-function App() {
+const httpClient = (url, options = {}) => {
+  if (!options.headers) {
+    options.headers = new Headers({ Accept: 'application/json' });
+  }
+  const token = localStorage.getItem('token');
+  options.headers.set('Authorization', `Bearer ${token}`);
+  return fetchUtils.fetchJson(url, options);
+};
+
+const dataProvider = jsonServerProvider(`${process.env.REACT_APP_DOMAIN_API}`, httpClient);
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+    <Admin loginPage={MyLoginPage} authProvider={authProvider} dataProvider={dataProvider}>
+      <Resource name="links" list={LinkList} create={LinkCreate} />
+    </Admin>
+  )
+};
 export default App;
