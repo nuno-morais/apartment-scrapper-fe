@@ -3,7 +3,7 @@ import { List, Datagrid, TextField, TextInput, Create, SimpleForm } from 'react-
 
 export const LinkList = props => (
     <List {...props}>
-        <Datagrid rowClick="edit">
+        <Datagrid >
             <TextField source="url" />
             <TextField source="provider" />
             <TextField source="createdAt" />
