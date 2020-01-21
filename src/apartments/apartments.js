@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ExportButton, useRefresh } from 'react-admin';
+import { List, ExportButton, useRefresh, Pagination } from 'react-admin';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -132,8 +132,12 @@ const PostActions = ({
         </Toolbar>
     );
 }
+const ApartmentPagination = props => <Pagination rowsPerPageOptions={[6, 12, 24, 48]} {...props} />;
+
 export const ApartmentList = props => (
-    <List {...props} sort={{ field: 'createdAt', order: 'DESC' }} actions={<PostActions />}>
+    <List title="All comments" {...props}
+        sort={{ field: 'createdAt', order: 'DESC' }} perPage={6} actions={<PostActions />}
+        pagination={<ApartmentPagination />}>
         <ApartmentsGrid />
     </List>
 );
