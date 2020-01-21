@@ -45,6 +45,18 @@ const ApartmentsGrid = ({ ids, data }) => {
             });
     }
 
+    const handleFavoriteClick = (apartmentId) => {
+
+        dataProvider.create(`apartments/${apartmentId}/actions/favorite`, { id: apartmentId, data: {} })
+            .then(() => {
+                console.log('Favorite apartment');
+                refresh();
+            })
+            .catch((e) => {
+                console.log('Error: An error occured on Favorite apartment', 'warning')
+            });
+    }
+
 
     return (
         <div style={{ margin: '1em' }}>
@@ -79,7 +91,9 @@ const ApartmentsGrid = ({ ids, data }) => {
                         }} aria-label="mark as hidden">
                             <VisibilityOffIcon />
                         </IconButton>
-                        <IconButton aria-label="add to favorites">
+                        <IconButton onClick={() => {
+                            handleFavoriteClick(data[id].id)
+                        }} aria-label="add to favorites">
                             <FavoriteIcon />
                         </IconButton>
                     </CardActions>
