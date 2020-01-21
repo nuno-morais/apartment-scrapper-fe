@@ -135,7 +135,7 @@ const PostActions = ({
 const ApartmentPagination = props => <Pagination rowsPerPageOptions={[6, 12, 24, 48]} {...props} />;
 
 export const ApartmentList = props => (
-    <List title="All comments" {...props}
+    <List {...props}
         sort={{ field: 'createdAt', order: 'DESC' }} perPage={6} actions={<PostActions />}
         pagination={<ApartmentPagination />}>
         <ApartmentsGrid />
