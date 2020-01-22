@@ -91,7 +91,7 @@ const ApartmentsGrid = ({ ids, data }) => {
                         }} aria-label="mark as hidden">
                             <VisibilityOffIcon />
                         </IconButton>
-                        <IconButton onClick={() => {
+                        <IconButton color={data[id].isFavorite ? 'secondary' : 'default'} onClick={() => {
                             handleFavoriteClick(data[id].id)
                         }} aria-label="add to favorites">
                             <FavoriteIcon />
