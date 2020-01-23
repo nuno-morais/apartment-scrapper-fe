@@ -1,6 +1,5 @@
 import React from 'react';
 import { List, Datagrid, TextField, TextInput, Create, SimpleForm } from 'react-admin';
-import PropTypes from 'prop-types';
 
 const AmazingUrlField = ({ source, record = {} }) => {
     const appendTitle = record.url.length > 100 ? '...' : '';
