@@ -7,21 +7,51 @@ const clientAuth0 = createAuth0Client({
     audience: process.env.REACT_APP_AUTH0_AUDIENCE
 });
 
-const authProvider = {
-    login: () => new Promise(async (resolve, reject) => {
-        try {
+const getUser = async () => {
+    let user = localStorage.getItem('user');
+    if (user == null) {
+        const authorization = await clientAuth0;
+        user = await authorization.getUser();
+        if (user != null) {
+            localStorage.setItem('user', user);
+        }
+    }
+    return user;
+}
+
+const getToken = async () => {
+    const user = getUser();
+    if (user != null) {
+        let token = localStorage.getItem('token');
+        if (token == null) {
             const authorization = await clientAuth0;
-            await authorization.loginWithPopup();
-
-            const user = await authorization.getUser();
-            if (user != null) {
-                localStorage.setItem('user', user);
-            }
-
             const token = await authorization.getTokenSilently();
             if (token != null) {
                 localStorage.setItem('token', token);
+                return token;
             }
+        }
+        return token;
+    }
+    return null;
+}
+
+const authProvider = {
+    login: () => new Promise(async (resolve, reject) => {
+        try {
+            let user = await getUser();
+            const token = await getToken();
+
+            if (user && token) {
+                resolve(user);
+                return user;
+            }
+
+            const authorization = await clientAuth0;
+            await authorization.loginWithPopup();
+
+            user = await getUser();
+            await getToken();
 
             resolve(user);
         }
@@ -43,14 +73,12 @@ const authProvider = {
         }
     }),
     checkAuth: () => new Promise(async (resolve, reject) => {
-        if (localStorage.getItem('user') == null) {
+        if (await getUser() == null) {
             reject();
         } else {
             try {
-                const authorization = await clientAuth0;
-                const token = await authorization.getTokenSilently();
+                const token = await getToken();
                 if (token) {
-                    localStorage.setItem('token', token);
                     resolve()
                 } else {
                     reject()
@@ -69,7 +97,7 @@ const authProvider = {
         return Promise.resolve();
     },
     getPermissions: () => new Promise(async (resolve, reject) => {
-        const user = localStorage.getItem('user');
+        const user = await getUser();
         if (user) {
             resolve();
         } else {
