@@ -46,11 +46,16 @@ const authProvider = {
                 resolve(user);
                 return user;
             }
+        } catch (e) {
+            console.log("An error occurred on login", e);
+        }
+                
+        try {
 
             const authorization = await clientAuth0;
             await authorization.loginWithPopup();
 
-            user = await getUser();
+            const user = await getUser();
             await getToken();
 
             resolve(user);
