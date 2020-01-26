@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ExportButton, useRefresh, Pagination } from 'react-admin';
+import { List, ExportButton, useRefresh, Pagination, useNotify } from 'react-admin';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -32,27 +32,52 @@ const ApartmentsGrid = ({ ids, data }) => {
 
     const filterIds = ids.filter(id => !data[id].isHidden);
     const refresh = useRefresh();
+    const notify = useNotify();
 
     const handleHidenClick = (apartmentId) => {
-
         dataProvider.create(`apartments/${apartmentId}/actions/hide`, { id: apartmentId, data: {} })
             .then(() => {
-                console.log('Hidden apartment');
+                notify('The apartment was marked as hidden.', 'info', {});
                 refresh();
             })
             .catch((e) => {
+                notify('There was an error when marking the apartment as hidden.', 'warning', {});
+                console.log('Error: An error occured on hidden apartment', 'warning')
+            });
+    }
+
+    const handleShowClick = (apartmentId) => {
+        dataProvider.create(`apartments/${apartmentId}/actions/hide`, { id: apartmentId, data: {} })
+            .then(() => {
+                notify('You can see the apartment again.', 'info', {});
+                refresh();
+            })
+            .catch((e) => {
+                notify('There was an error when marking the apartment as non hidden.', 'warning', {});
                 console.log('Error: An error occured on hidden apartment', 'warning')
             });
     }
 
     const handleFavoriteClick = (apartmentId) => {
-
         dataProvider.create(`apartments/${apartmentId}/actions/favorite`, { id: apartmentId, data: {} })
             .then(() => {
-                console.log('Favorite apartment');
+                notify('The apartment was marked as favorite.', 'info', {});
                 refresh();
             })
             .catch((e) => {
+                notify('There was an error when marking the apartment as a favorite.', 'warning', {});
+                console.log('Error: An error occured on Favorite apartment', 'warning')
+            });
+    }
+
+    const handleNonFavoriteClick = (apartmentId) => {
+        dataProvider.create(`apartments/${apartmentId}/actions/nonfavorite`, { id: apartmentId, data: {} })
+            .then(() => {
+                notify('The apartment was marked as non favorite.', 'info', {});
+                refresh();
+            })
+            .catch((e) => {
+                notify('There was an error when marking the apartment as a non favorite.', 'warning', {});
                 console.log('Error: An error occured on Favorite apartment', 'warning')
             });
     }
@@ -87,12 +112,14 @@ const ApartmentsGrid = ({ ids, data }) => {
                             Details
                                 </Button>
                         <IconButton onClick={() => {
-                            handleHidenClick(data[id].id)
+                            data[id].isHidden
+                                ? handleShowClick(data[id].id)
+                                : handleHidenClick(data[id].id)
                         }} aria-label="mark as hidden">
                             <VisibilityOffIcon />
                         </IconButton>
                         <IconButton color={data[id].isFavorite ? 'secondary' : 'default'} onClick={() => {
-                            handleFavoriteClick(data[id].id)
+                            data[id].isFavorite ? handleNonFavoriteClick(data[id].id) : handleFavoriteClick(data[id].id)
                         }} aria-label="add to favorites">
                             <FavoriteIcon />
                         </IconButton>
