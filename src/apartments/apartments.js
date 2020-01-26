@@ -169,7 +169,7 @@ const PostActions = ({
                 exporter={exporter}
             />
             {/* Add your custom actions */}
-            <Button color="primary" onClick={handleHidenClick}>Trigger scrapper</Button>
+            <Button color="primary" onClick={handleHidenClick}>Trigger scraper</Button>
         </Toolbar>
     );
 }
