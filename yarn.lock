@@ -3843,13 +3843,6 @@ dom-converter@^0.2:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
-  integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
-  dependencies:
-    "@babel/runtime" "^7.1.2"
-
 dom-helpers@^5.0.1:
   version "5.1.3"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-5.1.3.tgz#7233248eb3a2d1f74aafca31e52c5299cc8ce821"
@@ -9020,10 +9013,10 @@ querystringify@^2.1.1:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
 
-ra-core@^3.1.2, ra-core@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-3.1.3.tgz#823a60018d8d6d28ccb8fdfef5d2ce8727da7be6"
-  integrity sha512-BPK6vMIEiVXq1szIi6F+Us+nniFRQuDvFKSsm0SHTa6Y24RE/YLULuklPWfPpKNssKgTv8h96xyfcebEaDfZMA==
+ra-core@^3.1.3, ra-core@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-3.6.2.tgz#fd3a8803ac01a45f85ffc5e24b464f3b35395a23"
+  integrity sha512-t+5SY9skFDZf9HhufJ1TuSOGc+bLhEhuKYgonxEcACNRysH/dIx2jENixrqVuATgna2bFxaGhj++NL7rK1BqOw==
   dependencies:
     "@testing-library/react" "^8.0.7"
     classnames "~2.2.5"
@@ -9051,23 +9044,25 @@ ra-data-simple-rest@^3.1.0:
   dependencies:
     query-string "^5.1.1"
 
-ra-i18n-polyglot@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/ra-i18n-polyglot/-/ra-i18n-polyglot-3.1.3.tgz#abc472dec5604be376af74156d2dc88f54d5062d"
-  integrity sha512-jwB6AaAcXGNxcELmofH9zk6Rty5gLTI2vKs3RPLeM6Glr9Gdl1YzWcEzhWV11o7EGFKOXcb/VEie1TzlTFFM4w==
+ra-i18n-polyglot@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/ra-i18n-polyglot/-/ra-i18n-polyglot-3.6.2.tgz#0f3d105ce32db69e50248c9836b274664cdf3635"
+  integrity sha512-qJUOte0wyu2dezz0JAPhuBZFpLuloe8MsYK9C3qj7gw5wpKQgyRp0l01x3Q8efGLrz+nadM8zhNwFdsf6RlsuQ==
   dependencies:
     node-polyglot "^2.2.2"
-    ra-core "^3.1.3"
+    ra-core "^3.6.2"
 
-ra-language-english@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/ra-language-english/-/ra-language-english-3.1.0.tgz#2fa509c5cd1127f9ce58097829b8bc6a3d12f5cc"
-  integrity sha512-5v1mu3ri/u4YEqm5iop/KXJ+mDt9sQ97GjY7wG/SkEyG+LXo+IllpDqkNXhHqSA6HpqAxmcFY/LO9Gh7ApQLRA==
+ra-language-english@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/ra-language-english/-/ra-language-english-3.6.2.tgz#0657858def2cefff72b8c82eb6336d3764a7f930"
+  integrity sha512-xcbUcpJZsWHAwiow8x7rDwQJ5DnQSHBzX9lxKwwluLtsz4hhyvoDsvvVLBX6Lnp2NHGZMQIlwFxqhZEEKx3R7w==
+  dependencies:
+    ra-core "^3.6.2"
 
-ra-ui-materialui@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/ra-ui-materialui/-/ra-ui-materialui-3.1.3.tgz#898585b1ff7300b1c045d9efda33172b97b37bb1"
-  integrity sha512-SKkaBAjP7MCZGGZk5qUUYdVtOnMVFmYvImYKDo2Q9/6lGyumNL4yPEeD57vCWFt0D5YF+lM5WgQJJ6dSGs/S8g==
+ra-ui-materialui@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/ra-ui-materialui/-/ra-ui-materialui-3.6.2.tgz#5be5b0eeea30d1ae8206a2eea48134831b56ce5b"
+  integrity sha512-QRpCHsuUZzQNtW42xph3jvseWVmf7/uxt9kZKVJDxGAXDsUiAsVF+YvikD7WNfD8UCMnFdX2JTVVBND2dXBuDg==
   dependencies:
     autosuggest-highlight "^3.1.1"
     classnames "~2.2.5"
@@ -9080,7 +9075,7 @@ ra-ui-materialui@^3.1.3:
     prop-types "^15.7.0"
     query-string "^5.1.1"
     react-dropzone "^10.1.7"
-    react-transition-group "^2.2.1"
+    react-transition-group "^4.3.0"
     recompose "~0.26.0"
 
 raf@^3.4.1:
@@ -9130,10 +9125,10 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-admin@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/react-admin/-/react-admin-3.1.3.tgz#aa76e05d4f3983010f44069dc559c8a89f0e52c0"
-  integrity sha512-/Ab7xTZLqGGCWAFi/vYcKrcG4DoRjj1YRjbocjnnVfq5NaxoT2w88wXVEwC4QIwiEIOJPPl1lvXGQitYeuOssw==
+react-admin@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/react-admin/-/react-admin-3.6.2.tgz#ceba1abe353b4cde6ca4679e8ff04a39a0a99584"
+  integrity sha512-tKSPcfceSfp+2efAhnGbDA3/IUNIJFEnuJY88/SVDypLRXXEyLfMmVokzBQNmcIADemAS+gJlO++7eFFSc6ZPQ==
   dependencies:
     "@material-ui/core" "^4.3.3"
     "@material-ui/icons" "^4.2.1"
@@ -9141,10 +9136,10 @@ react-admin@^3.1.3:
     connected-react-router "^6.5.2"
     final-form "^4.18.5"
     final-form-arrays "^3.0.1"
-    ra-core "^3.1.3"
-    ra-i18n-polyglot "^3.1.3"
-    ra-language-english "^3.1.0"
-    ra-ui-materialui "^3.1.3"
+    ra-core "^3.6.2"
+    ra-i18n-polyglot "^3.6.2"
+    ra-language-english "^3.6.2"
+    ra-ui-materialui "^3.6.2"
     react-final-form "^6.3.3"
     react-final-form-arrays "^3.1.1"
     react-redux "^7.1.0"
@@ -9238,11 +9233,6 @@ react-is@^16.5.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.0, react-is
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
-
-react-lifecycles-compat@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
-  integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
 react-redux@^7.1.0:
   version "7.1.3"
@@ -9344,16 +9334,6 @@ react-scripts@^3.3.0:
     workbox-webpack-plugin "4.3.1"
   optionalDependencies:
     fsevents "2.1.2"
-
-react-transition-group@^2.2.1:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"
-  integrity sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==
-  dependencies:
-    dom-helpers "^3.4.0"
-    loose-envify "^1.4.0"
-    prop-types "^15.6.2"
-    react-lifecycles-compat "^3.0.4"
 
 react-transition-group@^4.3.0:
   version "4.3.0"
