@@ -1,6 +1,6 @@
 ## Description
 
-[Apartment Scrapper](https://github.com/nuno-morais/apartment-scrapper/) is a service to scan apartments to rent or buy. 
+[Apartment Scrapper](https://github.com/nuno-morais/apartment-scrapper-fe/) is a service to scan apartments to rent or buy. (If you need the backend side, please check it [here](https://github.com/nuno-morais/apartment-scrapper/))
 
 ## Installation
 
