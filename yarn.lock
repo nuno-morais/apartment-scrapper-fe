@@ -2,15 +2,16 @@
 # yarn lockfile v1
 
 
-"@auth0/auth0-spa-js@^1.6.2":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@auth0/auth0-spa-js/-/auth0-spa-js-1.6.2.tgz#4f0d01ac59a8258eb02dc2ea1e1d7b980154023e"
-  integrity sha512-FaPLOY3tmBn/kLVroPgsiqtblfowd9bboMOtd7re49WgLp9rGwcI55bcz1wP/b33INi/0jhMlpzRWtyu8OK1wA==
+"@auth0/auth0-spa-js@^1.12.1":
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/@auth0/auth0-spa-js/-/auth0-spa-js-1.12.1.tgz#791cdda722afa25f4c8879b93b8d7ab54a26e4c1"
+  integrity sha512-YdXtA1T2wK4iNG79VlGS/CPfNNezS1nqZURerj71jKSf8ICVKmvJgUNXFEZEwNNU/KFdCCPCHd5wMeWLDyEILw==
   dependencies:
-    browser-tabs-lock "^1.2.1"
-    core-js "^3.2.1"
-    es-cookie "^1.2.0"
-    fast-text-encoding "^1.0.0"
+    abortcontroller-polyfill "^1.5.0"
+    browser-tabs-lock "^1.2.9"
+    core-js "^3.6.5"
+    es-cookie "^1.3.2"
+    fast-text-encoding "^1.0.3"
     promise-polyfill "^8.1.3"
     unfetch "^4.1.0"
 
@@ -1875,6 +1876,11 @@ abbrev@1:
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
+abortcontroller-polyfill@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/abortcontroller-polyfill/-/abortcontroller-polyfill-1.5.0.tgz#2c562f530869abbcf88d949a2b60d1d402e87a7c"
+  integrity sha512-O6Xk757Jb4o0LMzMOMdWvxpHWrQzruYBaUruFaIOfAQRnWFxfdXYobw12jrVHGtoXk6WiiyYzc0QWN9aL62HQA==
+
 accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.7.tgz#531bc726517a3b2b41f850021c6cc15eaab507cd"
@@ -2541,10 +2547,12 @@ browser-resolve@^1.11.3:
   dependencies:
     resolve "1.1.7"
 
-browser-tabs-lock@^1.2.1:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/browser-tabs-lock/-/browser-tabs-lock-1.2.6.tgz#3812e530796d623130a23f2cd00282e2c4299f3b"
-  integrity sha512-+FUo97nnOix/nQo+j4HyCO47bsJtfx1EFhj1rghqYx7N0MQ8D34aoP4eJGrMtN0D18s2OAGpbPqo/0ONGxDLiA==
+browser-tabs-lock@^1.2.9:
+  version "1.2.11"
+  resolved "https://registry.yarnpkg.com/browser-tabs-lock/-/browser-tabs-lock-1.2.11.tgz#59d72c6653b827685b54fca1c0e6eb4aee08ef52"
+  integrity sha512-R0xXMzQ8CU0v52zSFn3EDGIfsjteMFJ6oIhhZK6+Vhz5NYzSxCP2epLD9PN7e2HprQl2QTReFptwp6c9tdOF0g==
+  dependencies:
+    lodash ">=4.17.19"
 
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
@@ -3243,10 +3251,10 @@ core-js@^2.4.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
   integrity sha512-I39t74+4t+zau64EN1fE5v2W31Adtc/REhzWN+gWRRXg6WH5qAsZm62DHpQ1+Yhe4047T55jvzz7MUqF/dBBlA==
 
-core-js@^3.2.1, core-js@^3.4.1:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
-  integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
+core-js@^3.4.1, core-js@^3.6.5:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
+  integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -4089,10 +4097,10 @@ es-abstract@^1.17.0-next.1:
     string.prototype.trimleft "^2.1.1"
     string.prototype.trimright "^2.1.1"
 
-es-cookie@^1.2.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/es-cookie/-/es-cookie-1.3.1.tgz#e3e300312403bca90a994ceac3ebb92b1fe4b6a5"
-  integrity sha512-8buG52dHo4NrUlcZG5TCPkbZjHIvFgpQ7Z0X2GhQuhu8qNHuMOm/jQ0eZwbARtjZ4rB6HP6cpltbx/FtCA6tUQ==
+es-cookie@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/es-cookie/-/es-cookie-1.3.2.tgz#80e831597f72a25721701bdcb21d990319acd831"
+  integrity sha512-UTlYYhXGLOy05P/vKVT2Ui7WtC7NiRzGtJyAKKn32g5Gvcjn7KAClLPWlipCtxIus934dFg9o9jXiBL0nP+t9Q==
 
 es-to-primitive@^1.2.1:
   version "1.2.1"
@@ -4569,10 +4577,10 @@ fast-levenshtein@~2.0.6:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
-fast-text-encoding@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/fast-text-encoding/-/fast-text-encoding-1.0.0.tgz#3e5ce8293409cfaa7177a71b9ca84e1b1e6f25ef"
-  integrity sha512-R9bHCvweUxxwkDwhjav5vxpFvdPGlVngtqmx4pIZfSUhM/Q4NiIUHB456BAf+Q1Nwu3HEZYONtu+Rya+af4jiQ==
+fast-text-encoding@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/fast-text-encoding/-/fast-text-encoding-1.0.3.tgz#ec02ac8e01ab8a319af182dae2681213cfe9ce53"
+  integrity sha512-dtm4QZH9nZtcDt8qJiOH9fcQd1NAgi+K1O2DbE6GG1PPCK/BWfOH3idCTRQ4ImXRUOyopDEgDEnVEE7Y/2Wrig==
 
 faye-websocket@^0.10.0:
   version "0.10.0"
@@ -6879,6 +6887,11 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
+lodash@>=4.17.19:
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+
 loglevel@^1.6.4:
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.6.tgz#0ee6300cc058db6b3551fa1c4bf73b83bb771312"
@@ -9020,7 +9033,7 @@ querystringify@^2.1.1:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
 
-ra-core@^3.1.2, ra-core@^3.1.3:
+ra-core@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-3.1.3.tgz#823a60018d8d6d28ccb8fdfef5d2ce8727da7be6"
   integrity sha512-BPK6vMIEiVXq1szIi6F+Us+nniFRQuDvFKSsm0SHTa6Y24RE/YLULuklPWfPpKNssKgTv8h96xyfcebEaDfZMA==
